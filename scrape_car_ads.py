@@ -1,28 +1,19 @@
-# TURBOCHARGED AD SCRAPER (FINAL BOSS EDITION)
+# SIMPLE STARTER SCRIPT (we'll add more later)
 import pandas as pd
-from nxtscape import scrape_ads  # THIS IS THE CORRECT IMPORT
 
-def scrape_dealer_ads():
-    print("⚡ Scraping competitor car ads...")
+def safe_scrape():
+    print("🛠️ Building your ad engine...")
     
-    # Target: Facebook Marketplace (cars under $30K)
-    ads = scrape_ads(
-        url="https://www.facebook.com/marketplace/cars/under-30000",
-        selectors={
-            "title": "div.ad-title",
-            "price": "div.ad-price", 
-            "mileage": "div.ad-mileage"  # CORRECT SPELLING
-        }
-    )
+    # TEST DATA (we'll add real scraping next)
+    test_ads = pd.DataFrame({
+        "Car": ["2022 Tesla Model 3", "2021 Ford F-150"],
+        "Price": ["$38,500", "$29,999"],
+        "Status": ["TEST DATA", "TEST DATA"]
+    })
     
-    # CarMax-style depreciation alerts
-    ads["price_drop_risk"] = ads["price"].apply(
-        lambda x: "⚠️" if int(x.replace("$","").replace(",","")) > 25000 else "✅"
-    )
-    
-    ads.to_csv("hot_car_ads.csv", index=False)
-    print(f"🔥 Saved {len(ads)} ads to 'hot_car_ads.csv'")
-    return ads
+    test_ads.to_csv("car_ads.csv", index=False)
+    print("✅ Saved test ads to 'car_ads.csv'")
+    return test_ads
 
 if __name__ == "__main__":
-    scrape_dealer_ads()  # CORRECT FUNCTION NAME
+    safe_scrape()
