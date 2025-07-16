@@ -1,0 +1,13 @@
+from nxtscape import scrape_ads  # Hypothetical nxtscape import
+
+def scrape_competitor_ads():
+    # Example: Scrape Facebook Marketplace car ads
+    ads = scrape_ads(
+        url="https://www.facebook.com/marketplace/cars",
+        selectors=["div.ad-title", "div.ad-price"],
+    )
+    ads.to_csv("competitor_ads.csv")
+    print("✅ Scraped ads saved to competitor_ads.csv")
+
+if __name__ == "__main__":
+    scrape_competitor_ads()
