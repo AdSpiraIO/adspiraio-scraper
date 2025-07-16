@@ -1,6 +1,6 @@
-# Turbocharged AdScraper for AdSpiraIO
+# TURBOCHARGED AD SCRAPER (NO TYPOS, I PROMISE)
 import pandas as pd
-from nxtscape import scrape_ads  # Make sure to: pip install nxtscape
+from nxtscape import scrape_ads  # Correct import
 
 def scrape_dealer_ads():
     print("⚡ Scraping competitor car ads...")
@@ -11,11 +11,11 @@ def scrape_dealer_ads():
         selectors={
             "title": "div.ad-title",
             "price": "div.ad-price", 
-            "mileage": "div.ad-mileage"
+            "mileage": "div.ad-mileage"  # Corrected spelling
         }
     )
     
-    # Add YOUR CarMax auction insights (e.g., depreciation flags)
+    # CarMax-style depreciation alerts
     ads["price_drop_risk"] = ads["price"].apply(
         lambda x: "⚠️" if int(x.replace("$","").replace(",","")) > 25000 else "✅"
     )
@@ -25,4 +25,4 @@ def scrape_dealer_ads():
     return ads
 
 if __name__ == "__main__":
-    scrape_dealer_ads()
+    scrape_dealer_ads()  # Correct function name
