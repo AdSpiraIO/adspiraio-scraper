@@ -1,6 +1,6 @@
-# TURBOCHARGED AD SCRAPER (NO TYPOS, I PROMISE)
+# TURBOCHARGED AD SCRAPER (FINAL BOSS EDITION)
 import pandas as pd
-from nxtscape import scrape_ads  # Correct import
+from nxtscape import scrape_ads  # THIS IS THE CORRECT IMPORT
 
 def scrape_dealer_ads():
     print("⚡ Scraping competitor car ads...")
@@ -11,7 +11,7 @@ def scrape_dealer_ads():
         selectors={
             "title": "div.ad-title",
             "price": "div.ad-price", 
-            "mileage": "div.ad-mileage"  # Corrected spelling
+            "mileage": "div.ad-mileage"  # CORRECT SPELLING
         }
     )
     
@@ -25,4 +25,4 @@ def scrape_dealer_ads():
     return ads
 
 if __name__ == "__main__":
-    scrape_dealer_ads()  # Correct function name
+    scrape_dealer_ads()  # CORRECT FUNCTION NAME
